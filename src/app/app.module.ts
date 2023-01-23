@@ -7,9 +7,11 @@ import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MomentModule } from 'ngx-moment';
+import { HomeComponent } from './pages/home/home.component';
+import { CasualExpensesComponent } from './pages/casual-expenses/casual-expenses.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent, CasualExpensesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
