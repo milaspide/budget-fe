@@ -7,7 +7,7 @@ import { GetExpensesListResponse } from '../model/response/getExpensesListRespon
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceTsService {
+export class ExpenseService {
 
   constructor(private client: HttpClient) { }
 

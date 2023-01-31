@@ -11,6 +11,9 @@ import { CasualExpensesComponent } from './pages/casual-expenses/casual-expenses
 import { FooterComponent } from './shared/component/footer/footer.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,10 @@ import { FormsModule } from '@angular/forms';
     DynamicDialogModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    HttpClientModule,
+    RouterModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

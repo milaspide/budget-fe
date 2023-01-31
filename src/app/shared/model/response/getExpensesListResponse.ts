@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from "@angular/common/http";
-import { ExpenseObj } from "../expenseObj";
+import { Expense } from "../expense";
 
 export interface GetExpensesListResponse extends HttpErrorResponse {
-    expensesList?: ExpenseObj[];
+    expensesList?: Expense[];
   }
