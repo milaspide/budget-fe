@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FixedExpensesComponent } from './pages/fixed-expenses/fixed-expenses.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RouterModule } from '@angular/router';
     CasualExpensesComponent,
     FooterComponent,
     HeaderComponent,
+    FixedExpensesComponent,
   ],
   imports: [
     BrowserModule,

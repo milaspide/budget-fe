@@ -1,6 +1,6 @@
-/* footer {
-    background: black;
-    text-align: center;
-    color: white;
-  }
-   */
+footer {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 40px;
+  color: white;
+}
