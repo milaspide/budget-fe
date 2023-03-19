@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,24 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FixedExpensesComponent } from './pages/fixed-expenses/fixed-expenses.component';
+import { KeycloakService } from 'keycloak-angular';
+import { environment } from 'src/environments/environment';
+
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: environment.keycloakUrl,
+        realm: 'budget',
+        clientId: 'budget-spa'
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html'
+      }
+    });
+}
 
 @NgModule({
   declarations: [
@@ -36,8 +54,15 @@ import { FixedExpensesComponent } from './pages/fixed-expenses/fixed-expenses.co
     HttpClientModule,
     RouterModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }
