@@ -1,6 +1,9 @@
 footer {
   text-align: center;
-  vertical-align: bottom;
-  padding: 40px;
   color: white;
+}
+
+p {
+  font-size: 0.8rem !important;
+  margin-top: revert !important;
 }

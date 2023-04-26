@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpenseService } from 'src/app/services/expense.service';
 import { Expense } from 'src/app/shared/model/expense';
-import { ExpenseService } from 'src/app/shared/service/expense.service';
 
 @Component({
   selector: 'app-casual-expenses',

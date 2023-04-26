@@ -6,17 +6,16 @@ import { AppComponent } from './app.component';
 import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { HomeComponent } from './pages/home/home.component';
-import { CasualExpensesComponent } from './pages/casual-expenses/casual-expenses.component';
-import { FooterComponent } from './shared/component/footer/footer.component';
-import { HeaderComponent } from './shared/component/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { CasualExpensesComponent } from './components/casual-expenses/casual-expenses.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FixedExpensesComponent } from './pages/fixed-expenses/fixed-expenses.component';
+import { FixedExpensesComponent } from './components/fixed-expenses/fixed-expenses.component';
 import { KeycloakService } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
+import { SharedModule } from './shared/shared.module';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -39,8 +38,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent,
     HomeComponent,
     CasualExpensesComponent,
-    FooterComponent,
-    HeaderComponent,
     FixedExpensesComponent,
   ],
   imports: [
@@ -53,14 +50,15 @@ function initializeKeycloak(keycloak: KeycloakService) {
     NgxSpinnerModule,
     HttpClientModule,
     RouterModule,
+    SharedModule
   ],
   providers: [CookieService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService]
-    }
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: initializeKeycloak,
+    //   multi: true,
+    //   deps: [KeycloakService]
+    // }
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
