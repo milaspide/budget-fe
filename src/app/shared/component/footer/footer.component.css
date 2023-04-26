@@ -6,4 +6,5 @@ footer {
 p {
   font-size: 0.8rem !important;
   margin-top: revert !important;
+  margin-bottom: revert !important;
 }

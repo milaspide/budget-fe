@@ -10,12 +10,13 @@ import { HomeComponent } from './components/home/home.component';
 import { CasualExpensesComponent } from './components/casual-expenses/casual-expenses.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FixedExpensesComponent } from './components/fixed-expenses/fixed-expenses.component';
 import { KeycloakService } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared/shared.module';
+import { GlobalHttpInterceptor } from './interceptor/global-http.interceptor';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -58,7 +59,12 @@ function initializeKeycloak(keycloak: KeycloakService) {
     //   useFactory: initializeKeycloak,
     //   multi: true,
     //   deps: [KeycloakService]
-    // }
+    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalHttpInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
