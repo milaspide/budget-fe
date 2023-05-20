@@ -1,3 +1,21 @@
-<li class="text-white" *ngFor="let expense of expenses">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let expense of expenses">
+      <tr>
+        <th scope="row">1</th>
+        <td>{{expense.expenseType}}</td>
+        <td>{{expense.description}}</td>
+        <td>{{expense.expenseAmount}} €</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- <li class="text-white" *ngFor="let expense of expenses">
     <div class="text-bg-black p-3">description: {{expense.description}}</div>
-    <div class="text-bg-black p-3">amount: {{expense.expenseAmount}} €</div>
+    <div class="text-bg-black p-3">amount: {{expense.expenseAmount}} €</div> -->

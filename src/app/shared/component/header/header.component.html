@@ -33,16 +33,16 @@
 </nav> -->
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
       aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon" style="height: 70px"></span>
     </button>
-    <a class="navbar-brand">Budget</a>
-    <div></div>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+    <a class="mx-auto navbar-brand fs-3">Budget</a>
+    <!-- <span class="navbar-toggler-icon"></span> -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
       aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Monthly Budget</h4>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -50,20 +50,22 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/fixed-expenses">Fixed Expenses</a>
-          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Expenses
+            <a class="nav-link dropdown-toggle" href="/fixed-expenses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fixed Expenses
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="/fixed-expenses">Fixed Expenses</a></li>
-              <li><a class="dropdown-item" href="/casual-expenses">Casual Expenses</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="/browse-fixed-expenses">Browse Fixed Expenses</a></li>
+              <li><a class="dropdown-item" href="/add-fixed-expense">Add Fixed Expense</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/casual-expenses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Casual Expenses
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/casual-expenses">Browse Casual Expenses</a></li>
+              <li><a class="dropdown-item" href="/add-casual-expense">Add Casual Expense</a></li>
             </ul>
           </li>
         </ul>
