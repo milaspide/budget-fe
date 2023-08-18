@@ -1,0 +1,20 @@
+<table class="table text-white">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let expense of expenses; let i = index">
+    <tr>
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ expense.expenseType }}</td>
+      <td>{{ expense.description }}</td>
+      <td>{{ expense.paymentDate | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ expense.expenseAmount }} €</td>
+    </tr>
+  </tbody>
+</table>

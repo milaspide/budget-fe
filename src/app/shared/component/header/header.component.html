@@ -1,0 +1,75 @@
+<!--nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Budget</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="color: #0A38F5"><i
+        class="fas fa-bars fa-1x"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+        <a class="nav-link active text-white" href="#">Features</a>
+        <a class="nav-link active text-white" href="#">Pricing</a>
+        <a class="nav-link active text-white">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav-->
+<!-- <div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+    <a class="nav-link active text-white" href="/fixed-expenses">Fixed Expenses</a>
+    <a class="nav-link active text-white" href="/casual-expenses">Casual Expenses</a>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav> -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+      aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="height: 70px"></span>
+    </button>
+    <a class="mx-auto navbar-brand fs-3">Budget</a>
+    <!-- <span class="navbar-toggler-icon"></span> -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+      aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Monthly Budget</h4>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fixed Expenses
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/fixed-expenses">Browse Fixed Expenses</a></li>
+              <li><a class="dropdown-item" href="/add-fixed-expense">Add Fixed Expense</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Casual Expenses
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/casual-expenses">Browse Casual Expenses</a></li>
+              <li><a class="dropdown-item" href="/add-casual-expense">Add Casual Expense</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,4 +1,9 @@
-<router-outlet></router-outlet>
-<!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type="square-jelly-box" [fullScreen] = "true"></ngx-spinner>
- -->
-<ngx-spinner type="fire"></ngx-spinner>
+<div class="sticky-header">
+  <app-header></app-header>
+</div>
+<app-alert></app-alert>
+<div class="content">
+  <router-outlet> </router-outlet>
+</div>
+<app-footer></app-footer>
+<ngx-spinner type="square-loader"></ngx-spinner>
