@@ -18,6 +18,9 @@ import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared/shared.module';
 import { GlobalHttpInterceptor } from './interceptor/global-http.interceptor';
 import { ExpensesTableComponent } from './components/expenses/expenses-table/expenses-table.component';
+import { AddExpenseComponent } from './components/expenses/add-expense/add-expense.component';
+import { AddCasualExpenseComponent } from './components/expenses/casual-expenses/add-casual-expense/add-casual-expense.component';
+import { AddFixedExpenseComponent } from './components/expenses/fixed-expenses/add-fixed-expense/add-fixed-expense.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -42,6 +45,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     CasualExpensesComponent,
     FixedExpensesComponent,
     ExpensesTableComponent,
+    AddExpenseComponent,
+    AddCasualExpenseComponent,
+    AddFixedExpenseComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,9 @@
-<app-expenses-table [expenses]="casualExpenses"></app-expenses-table>
+<div class="container-fluid p-4">
+  <h1 class="mb-4">Casual Expenses</h1>
+  <app-expenses-table [expenses]="casualExpenses"></app-expenses-table>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+    <button type="button" class="btn btn-dark" (click)="goToAddCasualExpense()">
+      Add Casual Expense
+    </button>
+  </div>
+</div>

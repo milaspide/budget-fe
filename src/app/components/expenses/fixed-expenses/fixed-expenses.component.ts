@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertService } from 'src/app/services/alert.service';
+import { Router } from '@angular/router';
 import { ExpenseService } from 'src/app/services/expense.service';
 import { Expense } from 'src/app/shared/model/expense';
 
@@ -11,22 +11,18 @@ import { Expense } from 'src/app/shared/model/expense';
 export class FixedExpensesComponent implements OnInit {
   fixedExpenses?: Expense[] = [];
 
-  constructor(
-    private expenseService: ExpenseService,
-    private alert: AlertService
-  ) {}
+  constructor(private expenseService: ExpenseService, private router: Router) {}
 
   ngOnInit(): void {
     const actualMonth = new Date().getMonth() + 1;
-    this.expenseService.getFixedExpensesByMonth(2, actualMonth).subscribe({
-      next: (resp) => {
+    this.expenseService
+      .getFixedExpensesByMonth(2, actualMonth)
+      .subscribe((resp) => {
         this.fixedExpenses = resp;
-      },
-      error: (resp) => {
-        this.alert.error(resp.message, {
-          autoClose: true,
-        });
-      },
-    });
+      });
+  }
+
+  goToAddFixedExpense() {
+    this.router.navigate(['/add-fixed-expense']);
   }
 }

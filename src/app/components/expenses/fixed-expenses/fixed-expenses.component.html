@@ -1,1 +1,9 @@
-<app-expenses-table [expenses]="fixedExpenses"></app-expenses-table>
+<div class="container-fluid p-4">
+  <h1 class="mb-4">Fixed Expenses</h1>
+  <app-expenses-table [expenses]="fixedExpenses"></app-expenses-table>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+    <button type="button" class="btn btn-dark" (click)="goToAddFixedExpense()">
+      Add Fixed Expense
+    </button>
+  </div>
+</div>
