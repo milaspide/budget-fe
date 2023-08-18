@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private client: HttpClient) { }
 
-  public getCasualExpenses(id?: string): Observable<GetExpensesListResponse> {
+  public getUserInfo(id?: string): Observable<GetExpensesListResponse> {
     return this.client.get<GetExpensesListResponse>(
       environment.baseUrl + '/expenses/casual/{userId}/{month}'
     );

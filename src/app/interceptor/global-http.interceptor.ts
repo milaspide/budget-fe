@@ -20,7 +20,7 @@ export class GlobalHttpInterceptor implements HttpInterceptor {
   constructor(
     private alertService: AlertService,
     private spinnerService: NgxSpinnerService
-  ) { }
+  ) {}
 
   intercept(
     request: HttpRequest<unknown>,
@@ -37,10 +37,10 @@ export class GlobalHttpInterceptor implements HttpInterceptor {
           let errorMessage = '';
           if (error.error instanceof ErrorEvent) {
             //client-side error
-            errorMessage = `Error : ${error.error.message}`;
+            errorMessage = `Error: ${error.error.message}`;
           } else {
             //server-side error
-            errorMessage = `Error Code : ${error.status}\nMessage: ${error.message}`;
+            errorMessage = `Error Code: ${error.status} --> ${error.error}`;
           }
           console.log(errorMessage);
           this.alertService.error(errorMessage, this.options);

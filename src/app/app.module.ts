@@ -7,16 +7,17 @@ import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HomeComponent } from './components/home/home.component';
-import { CasualExpensesComponent } from './components/casual-expenses/casual-expenses.component';
+import { CasualExpensesComponent } from './components/expenses/casual-expenses/casual-expenses.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FixedExpensesComponent } from './components/fixed-expenses/fixed-expenses.component';
+import { FixedExpensesComponent } from './components/expenses/fixed-expenses/fixed-expenses.component';
 import { KeycloakService } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared/shared.module';
 import { GlobalHttpInterceptor } from './interceptor/global-http.interceptor';
+import { ExpensesTableComponent } from './components/expenses/expenses-table/expenses-table.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -40,6 +41,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     HomeComponent,
     CasualExpensesComponent,
     FixedExpensesComponent,
+    ExpensesTableComponent,
   ],
   imports: [
     BrowserModule,

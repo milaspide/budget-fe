@@ -5,15 +5,41 @@ import { environment } from 'src/environments/environment';
 import { Expense } from '../shared/model/expense';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExpenseService {
+  CASUAL_TYPE = 'CASUAL';
+  FIXED_TYPE = 'FIXED';
 
-  constructor(private client: HttpClient) { }
+  constructor(private client: HttpClient) {}
 
-  public getCasualExpensesByMonth(id?: string, month?: string): Observable<Expense[]> {
+  public getCasualExpensesByMonth(
+    userId: number,
+    month?: number
+  ): Observable<Expense[]> {
     return this.client.get<Expense[]>(
-      environment.baseUrl + '/expenses/casual/month/' + id + '?month=' + month
+      environment.baseUrl + '/expenses?month=' + month,
+      {
+        params: {
+          userId: userId,
+          type: this.CASUAL_TYPE,
+        },
+      }
+    );
+  }
+
+  public getFixedExpensesByMonth(
+    userId: number,
+    month?: number
+  ): Observable<Expense[]> {
+    return this.client.get<Expense[]>(
+      environment.baseUrl + '/expenses?month=' + month,
+      {
+        params: {
+          userId: userId,
+          type: this.FIXED_TYPE,
+        },
+      }
     );
   }
 }
